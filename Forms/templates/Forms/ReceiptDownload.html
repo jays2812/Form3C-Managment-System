@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ReceiptDownload</title>
+</head>
+<body>
+
+
+<div class="container">
+  
+  <h2> <i style="font-size:24px" class="fa">&#xf0f6;</i></i>
+  <b>Receipt</b>
+  </h2><br>
+
+		<div class="row">
+
+			<div class="col-md">
+
+			<div class="card card-body">
+			<form action="http://127.0.0.1:8000/ViewReceipt" method="POST">
+				{% csrf_token %}
+			<table class="table">
+			<tr>
+				<th>Receipt Type</th>
+				<th>Date</th>
+				<th>Patient</th>
+				<th>Treatement</th>
+				<th>Amount</th>
+				<th>Remarks</th>
+			</tr>
+			{% for i in ViewReceipt %}
+			<tr>
+				<td>{{i.name}}</td>
+				<td>{{i.date}}</td>
+				<td>{{i.patient}}</td>
+				<td>{{i.treatment}}</td>
+				<td>{{i.amount}}</td>
+				<td>{{i.remarks}}</td>
+				<td><a class="btn btn-sm btn-info" href="{% url 'form-download-receipt' i.id %}">Download</a></td>
+			</tr>			
+			{% endfor %}
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

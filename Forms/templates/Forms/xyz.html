@@ -1,0 +1,81 @@
+<div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Receipt Type:</label>  
+    <div class="col-sm-4">  
+      {{ form.name }}  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Doctor:</label>  
+    <div class="col-sm-4">  
+      {{ form.doctor }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Patient:</label>  
+    <div class="col-sm-4">  
+      {{ form.patient }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Treatment:</label>  
+    <div class="col-sm-4">  
+      {{ form.treatment }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">SubTreatment:</label>  
+    <div class="col-sm-4">  
+      {{ form.subtreatment }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Date:</label>  
+    <div class="col-sm-4">  
+      {{ form.date }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Amount:</label>  
+    <div class="col-sm-4">  
+      {{ form.amount }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Remarks:</label>  
+    <div class="col-sm-4">  
+      {{ form.remarks }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>   
+    </div>  
+  
+</form>
+{% url 'form-createreceipt' doctor.id%}
+
+<nav>
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+   
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">New <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'form-createreceipt' doctors.id%}">Receipt</a></li>
+          <li class="divider"></li>
+          <li><a href="{% url 'form-treatment'%}">Treatment</a></li>
+          <li><a href="{% url 'form-subtreatment'%}">Sub Treatment</a></li>
+          <li class="divider"></li>
+          <li><a href="{% url 'form-income'%}">Income</a></li>
+          <li><a href="{% url 'form-expense'%}">Expense</a></li>
+        </ul>
+      </li>
+      <li><a href="{% url 'form-createpatient'%}">Patient</a></li>
+      <li><a href="#">Receipt Print</a></li>
+    </ul>
+    
+  </div>
+</nav>
+</nav>
+
+{% if j.patient==i.name %}

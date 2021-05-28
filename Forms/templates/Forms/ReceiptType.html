@@ -1,0 +1,29 @@
+{% extends 'Forms/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="POST">
+   {% csrf_token %}  
+    <div class="container">  
+<br>  
+     <h2> <i style="font-size:24px" class="fa">&#xf0f6;</i></i>
+  <b>ReceiptType</b>
+  </h2><br>
+    <div class="form-group row">  
+    
+    <div class="col-sm-4">  
+      {{ form.name|as_crispy_field }}  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+     
+    <div class="col-sm-4">  
+      {{ form.remarks|as_crispy_field }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>   
+    </div>  
+  
+</form>
+{% endblock content %}

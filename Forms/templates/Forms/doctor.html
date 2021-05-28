@@ -1,0 +1,26 @@
+{% extends 'Forms/base.html' %}
+{%block content%}
+<nav>
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+   
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">New <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'form-createreceipt' doctors.id%}">Receipt</a></li>
+          <li class="divider"></li>
+          <li><a href="{% url 'form-treatment'%}">Treatment</a></li>
+          <li><a href="{% url 'form-subtreatment'%}">Sub Treatment</a></li>
+          <li class="divider"></li>
+          <li><a href="{% url 'form-income'%}">Income</a></li>
+          <li><a href="{% url 'form-expense'%}">Expense</a></li>
+        </ul>
+      </li>
+      <li><a href="{% url 'form-createpatient'%}">Patient</a></li>
+      <li><a href="{% url 'form-print-receipt'%}">Receipt Print</a></li>
+    </ul>
+    
+  </div>
+</nav>
+</nav>
+{%endblock content%}	

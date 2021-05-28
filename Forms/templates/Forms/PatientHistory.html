@@ -1,0 +1,64 @@
+{% extends 'Forms/base.html' %}
+
+{% block content %}
+<div class="container">
+  
+  <h2> <i style="font-size:24px" class="fa">&#xf0f6;</i></i>
+  <b>Patient</b>
+  </h2><br>
+   <div class="row">
+  <div class="col">
+    <div class="card card-body">
+
+      <form method="get">
+        {{myFilter.form}}
+
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+    </div>
+  </div>
+  <br>
+  <br>
+
+		<div class="row">
+
+			<div class="col-md">
+
+			<div class="card card-body">
+			
+			<table class="table">
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Age</th>
+				<th>Gender</th>
+				<th>Treatment</th>
+				<th>Subtreatment</th>
+				<th>Date</th>
+				<th>Amount</th>
+			</tr>
+			{% for i in patient %}
+			<tr>
+				<td>{{i.name}}</td>
+				<td>{{i.phone}}</td>
+				<td>{{i.age}}</td>
+				<td>{{i.gender}}</td>
+				{% for j in receipt %}
+					{% ifequal j.patient.name i.name %}
+						<td>{{j.treatment}}</td>
+						<td>{{j.subtreatment}}</td>	
+						<td>{{j.date}}</td>
+						<td>{{j.amount}}</td>
+					{% endifequal %}	
+				{% endfor %}		
+			</tr>
+			{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+</div>
+
+  {% endblock content %}

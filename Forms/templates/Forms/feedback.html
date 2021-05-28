@@ -1,0 +1,35 @@
+{% extends 'Forms/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="" method="POST">
+   {% csrf_token %}
+<div class="container">
+  <h2><strong>Feedback Form</strong></h2><br>
+  
+  <form>
+    <div class="container">
+<label for="comment">Feedback Type:</label><br>
+  <form>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" checked>Comments
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Suggestions
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Questions
+    </label><br><br>
+  </form>
+</div>
+    <div class="form-group">
+    {{ form.FeedbackDescription|as_crispy_field }}
+<div class="form-group">
+    {{ form.Email|as_crispy_field }}
+  </div>
+    <div class="form-group row">  
+    <button type="submit" class="btn btn-primary"><center>Submit</center></button>  
+    </div> 
+  </form>
+</div>
+{% endblock content %}  
