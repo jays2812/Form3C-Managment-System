@@ -1,0 +1,2 @@
+# Form3C-Managment-System
+This specially developed website is a result of extensive research work made in existing practices as well as expert opinion from several doctors and medical informatics professionals. Looking at very busy schedule of doctors, the design emphasis of this is to make it ‘Doctor Friendly’. We train users thoroughly to use all the features of the software very efficiently to gain maximum benefits from it. Our Solutions have been developed on multitier, robust, scalable and modern software architecture with state-of-the-art technology to assist you more.
